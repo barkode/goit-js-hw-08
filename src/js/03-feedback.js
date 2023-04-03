@@ -10,7 +10,7 @@ formData = {};
 form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onFormInput, 500));
 
-populateTexteria();
+populateTextarea();
 
 function onFormInput(event) {
   formData[event.target.name] = event.target.value;
@@ -19,16 +19,21 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
-  event.currentTarget.reset();
-  localStorage.removeItem(STORAGE_KEY);
+  if (email.value !== '') {
+    localStorage.removeItem(STORAGE_KEY);
+    console.log({ email: email.value, password: textarea.value });
+    event.currentTarget.reset();
+  } else {
+    alert('Enter email, please!');
+  }
 }
 
-function populateTexteria() {
+function populateTextarea() {
   const parseMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (parseMessage.email) {
+  if (parseMessage?.email) {
     email.value = parseMessage.email;
   }
-  if (parseMessage.message) {
+  if (parseMessage?.message) {
     textarea.value = parseMessage.message;
   }
 }
