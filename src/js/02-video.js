@@ -13,6 +13,6 @@ if (getCurrentTime) {
 player.on('timeupdate', throttle(currentTime, 1000));
 
 function currentTime(data) {
-  let currentTime = data.seconds;
+  let currentTime = Math.round(data.seconds);
   localStorage.setItem('videoplayer-current-time', currentTime);
 }
