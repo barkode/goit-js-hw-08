@@ -10,8 +10,23 @@
   <body>
     <ul>
       <li><a href="01-gallery.html">Image gallery</a></li>
-      <li><a href="02-video.html">Video playback</a></li>
-      <li><a href="03-feedback.html">Feedback form</a></li>
+      <li><a href="02-video.html" id="video">Video playback</a></li>
+      <li><a href="03-feedback.html" id="feedback">Feedback form</a></li>
     </ul>
+    <script>
+      const video = document.getElementById('video');
+      const message = document.getElementById('feedback');
+      console.log(video.textContent);
+      console.log(message.textContent);
+      const videoItem = localStorage.getItem('videoplayer-current-time');
+      const messageItem = localStorage.getItem('feedback-form-state');
+      if (videoItem) {
+        video.textContent =
+          video.textContent + `   MUTE ON: ${videoItem} second`;
+      }
+      if (messageItem) {
+        message.textContent = message.textContent + '   You need to wrate!!!';
+      }
+    </script>
   </body>
 </html>
