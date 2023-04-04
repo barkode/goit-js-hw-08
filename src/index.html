@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 8</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/common.css" />
   </head>
   <body>
@@ -14,18 +14,5 @@
       <li><a href="02-video.html" id="video">Video playback</a></li>
       <li><a href="03-feedback.html" id="feedback">Feedback form</a></li>
     </ul>
-    <script>
-      const video = document.getElementById('video');
-      const message = document.getElementById('feedback');
-      const videoItem = localStorage.getItem('videoplayer-current-time');
-      const messageItem = localStorage.getItem('feedback-form-state');
-      if (videoItem) {
-        video.textContent =
-          video.textContent + `   MUTE ON: ${videoItem} second`;
-      }
-      if (messageItem) {
-        message.textContent = message.textContent + '   You need to wrate!!!';
-      }
-    </script>
   </body>
 </html>
