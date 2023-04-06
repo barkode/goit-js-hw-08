@@ -17,7 +17,7 @@ if (keyMessage) {
   textarea.value = savedMessage.message;
 }
 
-function onFormInput(event) {
+function onFormInput() {
   const formData = {
     email: email.value,
     message: textarea.value,
