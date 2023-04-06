@@ -17,7 +17,7 @@ if (keyMessage) {
   textarea.value = savedMessage.message;
 }
 
-function onFormInput() {
+function onFormInput(event) {
   const formData = {
     email: email.value,
     message: textarea.value,
@@ -33,6 +33,7 @@ function onFormSubmit(event) {
     return;
   }
   localStorage.removeItem(STORAGE_KEY);
-  console.log({ email: email.value, password: textarea.value });
+  const state = { email: email.value, password: textarea.value };
+  console.log(state);
   event.currentTarget.reset();
 }
